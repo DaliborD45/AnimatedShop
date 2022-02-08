@@ -57,19 +57,25 @@ export const productsArr = [
     colorLayout: "purple-500",
     name: "With Pouch",
     variantType: productVariant,
+    price: 199,
   },
   {
     id: 2,
     imgLink: "https://images.robotworld.sk/7900/foto_7903.jpg",
     colorLayout: "pink-500",
     name: "Robotic",
+    price: 299,
+
     variantType: productVariant2,
   },
   {
     id: 3,
-    imgLink:"https://im9.cz/sk/iR/importprodukt-orig/56b/56b900d6a7caa5eb3a1b128bedb6e5d7--mmf250x250.jpg",
+    imgLink:
+      "https://im9.cz/sk/iR/importprodukt-orig/56b/56b900d6a7caa5eb3a1b128bedb6e5d7--mmf250x250.jpg",
     colorLayout: "indigo-700",
     name: "Without Pouch",
+    price: 159,
+
     variantType: productVariant3,
   },
 ];

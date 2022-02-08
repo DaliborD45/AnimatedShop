@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+
 import { productsArr } from "./ProductsArr";
 import { motion, AnimatePresence } from "framer-motion";
-const ProductPage = () => {
+const ProductPage = ({ setCartList, cartList }) => {
+  const handleAddItem = (id, price, name) => {
+    const newItem = { itemName: name, id, price };
+    setCartList((prevState) => [...prevState, newItem]);
+    console.log(newItem);
+  };
   const headerVariant = {
     offscreen: {
       x: -300,
@@ -22,6 +28,7 @@ const ProductPage = () => {
       },
     },
   };
+
   return (
     <motion.div
       initial="offscreen"
@@ -37,7 +44,7 @@ const ProductPage = () => {
         Buy the one that suits you the best
       </motion.h1>
       <section className="w-full  pt-32 flex justify-between mx-auto">
-        {productsArr.map(({ name, variantType, id, imgLink, colorLayout }) => {
+        {productsArr.map(({ name, price, variantType, id, imgLink }) => {
           return (
             <>
               <motion.section
@@ -50,9 +57,23 @@ const ProductPage = () => {
                   className="w-60 relative left-16  top-16"
                   alt="roboticCleaner"
                 ></motion.img>
-                <motion.p className="mt-44 text-center font-bold text-gray-100 hover:text-gray-300 font-mono cursor-pointer text-4xl">
-                  {name}
-                </motion.p>
+                <section className="flex flex-col justify-center mt-44 ml-5 hover:text-gray-300">
+                  <motion.p className=" text-center font-bold drop-shadow-xl  text-gray-100  font-mono cursor-pointer text-4xl">
+                    {name}
+                  </motion.p>
+                  <motion.p className="  text-center font-bold text-gray-100 font-mono cursor-pointer text-4xl">
+                    {price} $
+                  </motion.p>
+                  <motion.button
+                    onClick={() => handleAddItem(id, price, name)}
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    className="w-1/3  mx-auto rounded-lg py-2 mt-4 bg-indigo-600 text-white font-bold hover:bg-indigo-500"
+                  >
+                    Buy now
+                  </motion.button>
+                </section>
               </motion.section>
             </>
           );
