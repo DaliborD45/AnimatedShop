@@ -24,9 +24,9 @@ const IntroPage = () => {
     };
   }, []);
   return (
-    <section className="w-3/4 mx-auto min-h-screen pt-40 text-center">
+    <section className="w-3/4 mx-auto min-h-screen mt-16 text-center" id="intro">
       <section>
-        <h1 className="text-white font-bold text-6xl font-['helvetica']">
+        <h1 className="pt-40 text-white font-bold text-6xl font-['helvetica']">
           Rowenta Cleaners
         </h1>
         <section className="mt-12 text-4xl">

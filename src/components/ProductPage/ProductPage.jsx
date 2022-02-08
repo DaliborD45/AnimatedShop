@@ -2,10 +2,16 @@ import React, { useState } from "react";
 
 import { productsArr } from "./ProductsArr";
 import { motion, AnimatePresence } from "framer-motion";
+import Alert from "./Alert/Alert";
 const ProductPage = ({ setCartList, cartList }) => {
+  const [isAlertOpen, setAlertOpen] = useState(false);
   const handleAddItem = (id, price, name) => {
     const newItem = { itemName: name, id, price };
     setCartList((prevState) => [...prevState, newItem]);
+    setAlertOpen(true);
+    setTimeout(() => {
+      setAlertOpen(false);
+    }, 2000);
     console.log(newItem);
   };
   const headerVariant = {
@@ -20,7 +26,6 @@ const ProductPage = ({ setCartList, cartList }) => {
       y: 20,
       opacity: 1,
       transition: {
-        delay: 0.5,
 
         type: "spring",
         bounce: 0.4,
@@ -37,8 +42,10 @@ const ProductPage = ({ setCartList, cartList }) => {
       className="max-w-screen h-screen bg-curvybg2 bg-cover"
       id="products"
     >
+      <Alert isAlertOpen={isAlertOpen} setAlertOpen={setAlertOpen} />
+
       <motion.h1
-        className="font-bold text-white text-center text-4xl pt-10 font-['Helvetica']"
+        className="font-bold text-white text-center text-4xl pt-20 font-['Helvetica']"
         variants={headerVariant}
       >
         Buy the one that suits you the best

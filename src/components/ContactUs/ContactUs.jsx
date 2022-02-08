@@ -1,10 +1,33 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 const ContactUs = () => {
+  const formVariant = {
+    offscreen: {
+      y: 0,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+
+        type: "spring",
+        bounce: 0.4,
+        duration: 2,
+      },
+    },
+  };
   return (
-    <div className="bg-curvybg3 bg-cover max-w-screen h-screen" id="contactus">
+    <div className="bg-curvybg3 bg-cover max-w-screen min-h-screen" id="contactus">
       <div>
-        <section className="text-white body-font relative">
+        <motion.section
+          className="text-white body-font relative pt-20"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={formVariant}
+        >
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
               <h1 className="sm:text-3xl text-4xl font-medium title-font mb-4 text-white">
@@ -18,10 +41,7 @@ const ContactUs = () => {
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-1/2">
                   <div className="relative">
-                    <label
-                      for="name"
-                      className="leading-7 text-sm text-white"
-                    >
+                    <label for="name" className="leading-7 text-sm text-white">
                       Name
                     </label>
                     <input
@@ -34,10 +54,7 @@ const ContactUs = () => {
                 </div>
                 <div className="p-2 w-1/2">
                   <div className="relative">
-                    <label
-                      for="email"
-                      className="leading-7 text-sm text-white"
-                    >
+                    <label for="email" className="leading-7 text-sm text-white">
                       Email
                     </label>
                     <input
@@ -64,7 +81,7 @@ const ContactUs = () => {
                   </div>
                 </div>
                 <div className="p-2 w-full">
-                  <button className="flex mx-auto text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                  <button className="flex mx-auto text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg">
                     Send
                   </button>
                 </div>
@@ -79,7 +96,7 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const CartListModal = ({ isCartOpen, setCartOpen, cartList, setCartList }) => {
 
   return (
     isCartOpen && (
-      <div className="absolute w-72 right-10 top-20 bg-white rounded-lg shadow  dark:bg-gray-700 border ">
+      <div className="fixed z-10 w-72 right-10 top-20 bg-white rounded-lg shadow  dark:bg-gray-700 border ">
         <div className="flex items-start justify-between p-5 border-b rounded-t dark:border-gray-600">
           <h3 className="text-gray-900 text-xl lg:text-2xl font-semibold dark:text-white">
             Shopping Cart

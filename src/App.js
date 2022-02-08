@@ -12,16 +12,16 @@ function App() {
   const [isCartOpen, setCartOpen] = useState(false);
   return (
     <div className="bg-gradient-to-r from-indigo-500 to-purple-500 max-w-screen h-screen">
-      <Navbar setCartOpen={setCartOpen} />
-      <IntroPage />
-      <TechnologiesPage />
-      <ProductPage cartList={cartList} setCartList={setCartList} />
-      <CartListModal
+      <Navbar
+        setCartOpen={setCartOpen}
         cartList={cartList}
         setCartList={setCartList}
         isCartOpen={isCartOpen}
-        setCartOpen={setCartOpen}
       />
+      <IntroPage />
+      <TechnologiesPage />
+      <ProductPage cartList={cartList} setCartList={setCartList} />
+
       <ContactUs />
     </div>
   );
