@@ -11,7 +11,7 @@ function App() {
   ]);
   const [isCartOpen, setCartOpen] = useState(false);
   return (
-    <div className="bg-gradient-to-r from-indigo-500 to-purple-500 max-w-screen h-screen">
+    <div className="bg-gradient-to-r from-indigo-500 to-purple-500 max-w-screen h-screen overflow-x-hidden">
       <Navbar
         setCartOpen={setCartOpen}
         cartList={cartList}

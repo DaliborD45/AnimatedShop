@@ -3,11 +3,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "curvybg": "url('/src/images/layer1.svg')",
-        "curvybg2": "url('/src/images/layer2.svg')",
-        "curvybg3": "url('/src/images/layer3.svg')",
+        curvybg: "url('/src/images/layer1.svg')",
+        curvybg2: "url('/src/images/layer2.svg')",
+        curvybg3: "url('/src/images/layer3.svg')",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

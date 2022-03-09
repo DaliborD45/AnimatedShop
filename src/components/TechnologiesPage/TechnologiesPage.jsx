@@ -23,9 +23,9 @@ const TechnologiesPage = () => {
   return (
     <div id="technologies">
       <div className="-mt-[64px] bg-curvybg bg-cover min-h-screen">
-        <section className="w-4/4 mx-auto  pt-72 flex">
+        <section className="w-4/4 mx-auto  pt-72 flex ">
           <motion.section
-            className="text-white font-bold text-4xl font-sans flex mt-28"
+            className="text-white font-bold text-4xl font-sans  flex md:flex-row flex-col mt-28 w-full  justify-center 2xl:justify-start 2xl:w-3/5"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.8 }}
@@ -43,7 +43,10 @@ const TechnologiesPage = () => {
                 Our vacuum cleaner are designed by best engineers on the planet.
               </p>
             </motion.section>
-            <motion.section className="mx-20 " variants={cardVariants}>
+            <motion.section
+              className=" 3xl:mx-20 2xl:mx-10 mx-2"
+              variants={cardVariants}
+            >
               <section className="ml-16">
                 <FontAwesomeIcon
                   className="ml-10 mb-4 animate-bounce"
@@ -70,10 +73,12 @@ const TechnologiesPage = () => {
               </p>
             </motion.section>
           </motion.section>
-          <section className="w-96 h-96 bg-white rounded-full border-8 border-pink-500 ml-auto mr-40">
+          {/* <section className=" xl:w-60 xl:h-60  3xl:w-96 3xl:h-96 bg-white rounded-full border-8 border-pink-500 ml-auto mr-40"> */}
+          <section className="hidden 2xl:block w-96 h-96 bg-white rounded-full border-8 border-pink-500 ml-auto mr-40">
             <img
               src="https://images.robotworld.sk/7900/foto_7903.jpg"
-              className="w-60 relative left-16  top-16 "
+              // className="w-40 3xl:w-60 relative left-16  top-16 "
+              className="w-60 relative left-16 top-16 "
             ></img>
           </section>
         </section>
